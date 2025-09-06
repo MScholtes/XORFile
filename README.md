@@ -12,7 +12,7 @@ For this reason, I wrote **XORFile**, which (by default) changes the first 32 by
 And since this is a fun project, I paid attention to good performance in using ‘*Seek*’ (only the bytes to be changed are processed, not the entire file) and wrote it in 3 languages: C++, C# and Powershell.
 
 ## Powershell One Liner
-One liner to copy and paste to your console window
+One liner to copy and paste to your Powershell window
 
 First, set the name (and path) of the file you want to change in varable $N and the number of bytes you want to XOR in variable $B, e.g.
 ```powershell
@@ -29,14 +29,43 @@ $A=[byte[]]::new($B);$S=New-Object IO.FileStream($N,3,3);$B=$S.Read($A,0,$B);0..
 A second run will restore the file to its original state.
 
 ## C++
-1. Download **CPP\XORFile.cpp**
+1. Download **C++\XORFile.cpp**
 2. Start a **Developer Command Prompt for Visual Studio**, change to the  directory you saved **XORFile.cpp**
 3. Execute _**cl XORFile.cpp**_
 
-or download **CPP\XORFILE.exe**
+or download **C++\XORFILE.exe**
 
 Then you can process a file with
 ```cmd
 XORFile <FILENAME> [<COUNTOFBYTES>]
 ```
 **&lt;COUNTOFBYTES&gt;** defaults to 32.
+
+A second run will restore the file to its original state.
+
+## C#
+1. Download **C#\XORFile.cs**
+2. Start a command or powershell window, change to the  directory you saved **XORFile.cs**
+3. Execute _**C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe XORFile.cs**_
+
+or download **C#\XORFILE.exe**
+
+Then you can process a file with
+```cmd
+XORFile <FILENAME> [<COUNTOFBYTES>]
+```
+**&lt;COUNTOFBYTES&gt;** defaults to 32.
+
+A second run will restore the file to its original state.
+
+## Powershell
+1. Download **Powershell\XORFile.ps1**
+2. Start a powershell window, change to the  directory you saved **XORFile.ps1**
+
+Then you can process a file with
+```cmd
+.\XORFile.ps1 <FILENAME> [<COUNTOFBYTES>]
+```
+**&lt;COUNTOFBYTES&gt;** defaults to 32.
+
+A second run will restore the file to its original state.
